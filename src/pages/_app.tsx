@@ -1,19 +1,23 @@
 import { type AppType } from "next/app";
 import { Inter } from "next/font/google";
-
 import { api } from "~/utils/api";
-
 import "~/styles/globals.css";
+import NavBar from "../components/layout";
 
-const inter = Inter({
+export const inter = Inter({
+  display: "swap",
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <main className={`font-sans ${inter.variable}`}>
-      <Component {...pageProps} />
-    </main>
+    <>
+      <NavBar />
+      <main className={`font-sans ${inter.variable}`}>
+        <Component {...pageProps} />
+      </main>
+    </>
   );
 };
 
